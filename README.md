@@ -1,6 +1,6 @@
 # CloudCredSearch
 
-This bash script is a supplement for the cloud_enum tool: https://github.com/initstring/cloud_enum
+This bash script is a supplement for the cloud_enum tool: https://github.com/initstring/cloud_enum .
 It takes the output of cloud_enum that is generated with -l option and iterates through all the files discovered by cloud_enum searching for credential strings such as "password=", or any other you would like to search for.
 
 Use:
