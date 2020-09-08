@@ -4,6 +4,13 @@
 # Start with: cloud_enum -k <KEYWORD> -t 10 -m <MUTATIONS_DICT> -b <BRUTEFORCE_DICT> -l <REPORT_FILE>
 # Provide the cloud_enum report to this script as: CloudCredSearch.sh <cloud_enum_report_file> <credentials_search_report_file_to_be_generated>
 
+# tune temp folder path here
+tempfold="/tmp/CCSearch-$RANDOM"
+
+# define keywords to search for
+# keywarr=(passw usern login logon secret pwd= userid pwd: pass= pass: user: user= accesskey)
+keywarr=(passw secret pwd= pwd: pass= pass: accesskey)
+
 if [ -z $1 ]
 then
 read -p "Enter the path to the cloud_enum found objects list: " listfile
@@ -31,13 +38,6 @@ read -p "Enter the path and name for the report file: " repfile
 else
 repfile=$2
 fi
-
-# tune temp folder path here
-tempfold="/tmp/CCSearch-$RANDOM"
-
-# define keywords to search for
-# keywarr=(passw usern login logon secret pwd= userid pwd: pass= pass: user: user= accesskey)
-keywarr=(passw secret pwd= pwd: pass= pass: accesskey)
 
 mkdir $tempfold
 touch $repfile
