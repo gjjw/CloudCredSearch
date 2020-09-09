@@ -11,6 +11,7 @@ tempfold="/tmp/CCSearch-$RANDOM"
 # keywarr=(passw usern login logon secret pwd= userid pwd: pass= pass: user: user= accesskey)
 keywarr=(passw secret pwd= pwd: pass= pass: accesskey)
 
+
 if [ -z $1 ]
 then
 read -p "Enter the path to the cloud_enum found objects list: " listfile
@@ -46,7 +47,7 @@ while IFS= read -r line
 do
 strline=$line
 
-	if [[ ${strline:0:2} == "->" ]]
+	if [[ (${strline:0:2} == "->") && (${strline,,} != *".jpg") && (${strline,,} != *".png") && (${strline,,} != *".exe") && (${strline,,} != *".gif") && (${strline,,} != *".pdf") && (${strline,,} != *".mp4") && (${strline,,} != *".jpeg") && (${strline,,} != *".mpg") ]] # exclude extensions here
 	then
 	strfile=$(echo $strline | cut -c3-)
 	wget -t 3 -T 3 $strfile -P "$tempfold/"
@@ -56,7 +57,7 @@ strline=$line
 
 	if [[ $extension == "zip" ]] # handling zip archives
 	then
-	unzip -p $lfile >> "$lfile.txt"
+	unzip -p -aa $lfile >> "$lfile.txt"
 	rm -f $lfile
 	lfile="$lfile.txt"
 	fi
@@ -74,7 +75,7 @@ strline=$line
 			kwposarr=$(echo $cline | grep -b -o $keywrd | awk 'BEGIN {FS=":"}{print $1}')
 			for kwpos in ${kwposarr[*]}
 			do
-				echo -e "FILE: $strfile\nKEYWORD: $keywrd\nSTRING (occurance + 1000 characters): ${fline:$kwpos:1000}\n\n" >> $repfile
+				echo -e "FILE: $strfile\nKEYWORD: $keywrd\nSTRING (occurance + 300 characters): ${fline:$kwpos:300}\n\n" >> $repfile
 			done
 			fi
 		done
