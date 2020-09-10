@@ -7,9 +7,10 @@
 # tune temp folder path here
 tempfold="/tmp/CCSearch-$RANDOM"
 
-# define keywords to search for
-# keywarr=(passw usern login logon secret pwd= userid pwd: pass= pass: user: user= accesskey)
-keywarr=(passw secret pwd= pwd: pass= pass: accesskey accountkey)
+# define keywords to search for (you can use of the proposed strings or add your)
+# keywarr=(passw usern login logon secret pwd= userid pwd: pass= pass: user: user= accesskey accountname accountkey)
+# keywarr=(passw secret pwd= pwd: pass= pass: accesskey accountkey)
+keywarr=(passw accountkey)
 
 
 if [ -z $1 ]
