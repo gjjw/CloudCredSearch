@@ -9,7 +9,7 @@ tempfold="/tmp/CCSearch-$RANDOM"
 
 # define keywords to search for
 # keywarr=(passw usern login logon secret pwd= userid pwd: pass= pass: user: user= accesskey)
-keywarr=(passw secret pwd= pwd: pass= pass: accesskey)
+keywarr=(passw secret pwd= pwd: pass= pass: accesskey accountkey)
 
 
 if [ -z $1 ]
