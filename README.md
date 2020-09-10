@@ -5,4 +5,5 @@ It takes the output of cloud_enum that is generated with -l option and iterates 
 
 Use:
 1) Run cloud_enum with a string like: cloud_enum -k <KEY_WORD> -t 10 -m <MUTATIONS_DICT> -b <BRUTEFORCE_DICT> -l <REPORT_FILE>
-2) Provide the cloud_enum report to this script as: CloudCredSearch.sh <cloud_enum_report_file> <credentials_search_report_file_to_be_generated>
+2) Tune keywords to search for; file extensions to exclude from the search; folders in the script
+3) Provide the cloud_enum report to this script as: CloudCredSearch.sh <cloud_enum_report_file> <credentials_search_report_file_to_be_generated
