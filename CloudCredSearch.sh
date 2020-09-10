@@ -48,7 +48,7 @@ while IFS= read -r line
 do
 strline=$line
 
-	 # exclude extensions here
+	 # exclude file extensions here
 	if [[ (${strline:0:2} == "->") && (${strline,,} != *".jpg") && (${strline,,} != *".png") && (${strline,,} != *".exe") && (${strline,,} != *".gif") && (${strline,,} != *".pdf") && (${strline,,} != *".mp4") && (${strline,,} != *".jpeg") && (${strline,,} != *".mpg") && (${strline,,} != *".mp3") ]]
 	then
 	strfile=$(echo $strline | cut -c3-)
